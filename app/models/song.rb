@@ -4,6 +4,7 @@ class Song < ActiveRecord::Base
   belongs_to :genre
   has_many :notes
 
+#custom setter and getter, convenience attributes 
   def artist_name=(name)
     self.artist = Artist.find_or_create_by(name: name)
   end
