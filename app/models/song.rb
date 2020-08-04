@@ -4,7 +4,8 @@ class Song < ActiveRecord::Base
   belongs_to :genre
   has_many :notes
 
-#custom setter and getter, convenience attributes 
+#custom setter and getter, convenience attributes
+#artist_name= setter method. called whenever a song is initialized with a artist name 
   def artist_name=(name)
     self.artist = Artist.find_or_create_by(name: name)
   end
