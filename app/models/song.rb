@@ -5,7 +5,8 @@ class Song < ActiveRecord::Base
   has_many :notes
 
 #custom setter and getter, convenience attributes
-#artist_name= setter method. called whenever a song is initialized with a artist name 
+#artist_name= setter method. called whenever a song is initialized with a artist name
+#this method intercepts the call to the database, makes the Artist exist and provides it in memory for the song model
   def artist_name=(name)
     self.artist = Artist.find_or_create_by(name: name)
   end
