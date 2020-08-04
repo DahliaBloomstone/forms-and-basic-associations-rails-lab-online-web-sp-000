@@ -1,7 +1,7 @@
 class Song < ActiveRecord::Base
-  belongs_to :artist	  belongs_to :artist
-  belongs_to :genre	  belongs_to :genre
-  has_many :notes	  has_many :notes
+  belongs_to :artist	 
+  belongs_to :genre
+  has_many :notes
 
   def artist=(name)
     self.artist_id = Artist.find_or_create_by(name: name).id
